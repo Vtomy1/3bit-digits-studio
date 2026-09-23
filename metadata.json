@@ -1,0 +1,6 @@
+{
+  "name": "BitDigit Studio",
+  "description": "Transform images into 3-bit palette dithered digit matrices with Floyd-Steinberg, Atkinson, and Bayer algorithms, live monospace preview, and TXT export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
