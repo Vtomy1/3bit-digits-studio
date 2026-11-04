@@ -84,7 +84,7 @@ export const DitherGuideModal: React.FC<DitherGuideModalProps> = ({
               </div>
             </div>
             <p className="text-neutral-400">
-              In grayscale mode, the 8 states map to 8 evenly stepped luminance levels from deep black (<code className="font-mono text-amber-300">0</code>) to peak white (<code className="font-mono text-amber-300">7</code>).
+              In grayscale mode, the 8 states map to 8 evenly stepped luminance levels from deep black (<code className="font-mono text-amber-300">0</code>) to peak white (<code className="font-mono text-amber-300">7</code>). In retro environments like <strong>Microsoft QuickBASIC / QBasic 1.1</strong>, digits 0–7 correspond directly to the canonical low-intensity DOS color attributes (Black, Blue, Green, Cyan, Red, Magenta, Brown, and Light Gray/White), while attributes 8–15 form the high-intensity bright color bank.
             </p>
           </div>
 

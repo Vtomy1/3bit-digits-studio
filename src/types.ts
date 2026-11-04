@@ -57,6 +57,7 @@ export type ExportFormat =
   | 'code-c'
   | 'code-python'
   | 'code-json'
+  | 'code-qbasic'
   | 'ansi-terminal';
 
 export interface ProcessedResult {

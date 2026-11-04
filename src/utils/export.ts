@@ -92,6 +92,54 @@ ${rows}
       );
     }
 
+    case 'code-qbasic': {
+      // Executable Microsoft QBasic 1.1 / QuickBASIC / QB64 source code
+      const dataStatements = digits
+        .map(row => `DATA "${row.join('')}"`)
+        .join('\n');
+
+      return `' ============================================================
+' BitDigit Studio - 3-Bit Digit Matrix
+' Target: Microsoft QBasic 1.1, QuickBASIC 4.5, QB64, PC-BASIC
+' Resolution: ${width}x${height}
+' Palette: ${palette.name}
+' ============================================================
+DEFINT A-Z
+SCREEN 13 ' 320x200 graphics mode
+CLS
+
+CONST IMGWIDTH = ${width}
+CONST IMGHEIGHT = ${height}
+
+DIM startX AS INTEGER, startY AS INTEGER
+startX = (320 - IMGWIDTH) \\ 2
+IF startX < 0 THEN startX = 0
+startY = (200 - IMGHEIGHT) \\ 2
+IF startY < 0 THEN startY = 0
+
+RESTORE ImageData
+DIM y AS INTEGER, x AS INTEGER
+DIM rowData AS STRING
+DIM pixelDigit AS INTEGER
+
+FOR y = 0 TO IMGHEIGHT - 1
+    READ rowData$
+    FOR x = 0 TO IMGWIDTH - 1
+        pixelDigit = VAL(MID$(rowData$, x + 1, 1))
+        PSET (startX + x, startY + y), pixelDigit
+    NEXT x
+NEXT y
+
+LOCATE 24, 1: PRINT "QBasic Digit Matrix Rendered. Press key...";
+DO: LOOP UNTIL INKEY$ <> ""
+SCREEN 0: WIDTH 80: CLS
+SYSTEM
+
+ImageData:
+${dataStatements}
+`;
+    }
+
     case 'ansi-terminal': {
       // ANSI 8-color foreground escape codes
       // Standard ANSI color codes: 30=Black, 34=Blue, 32=Green, 36=Cyan, 31=Red, 35=Magenta, 33=Yellow, 37=White

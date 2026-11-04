@@ -40,6 +40,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
     { id: 'code-c', name: 'C / C++ Array', ext: 'h', desc: 'Embedded uint8_t 2D array header file' },
     { id: 'code-python', name: 'Python Array', ext: 'py', desc: 'Python 2D nested list variable definition' },
     { id: 'code-json', name: 'JSON Matrix', ext: 'json', desc: 'Structured JSON with metadata and 2D digit grid' },
+    { id: 'code-qbasic', name: 'QBasic / QB64 Program', ext: 'bas', desc: 'Executable MS-DOS QuickBASIC code with SCREEN 13 & DATA statements' },
     { id: 'ansi-terminal', name: 'ANSI Colored TXT', ext: 'txt', desc: 'Shell color codes: render in terminal via cat' },
   ];
 
@@ -74,6 +75,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
       h: 'text/x-c;charset=utf-8',
       py: 'text/x-python;charset=utf-8',
       json: 'application/json;charset=utf-8',
+      bas: 'text/plain;charset=utf-8',
     };
     const mime = mimeMap[currentFormatObj.ext] || 'text/plain;charset=utf-8';
     downloadFile(outputContent, filename, mime);
